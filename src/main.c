@@ -334,7 +334,12 @@ void MkDir(const char *s) {
 }
 
 #undef main
-int main(int argc, char** argv) {
+#if defined(_WIN32) || defined(_WIN64)
+#include <windows.h>
+	int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow) 
+#else
+	int main(int argc, char** argv) {
+#endif
 #ifdef __SWITCH__
   SwitchImpl_Init();
 #endif
