@@ -20,7 +20,7 @@ jobs:
     - name: 'Setup x86_64 environment'
       uses: msys2/setup-msys2@v2
       with:
-        msystem: ${{ matrix.msystem }}
+        msystem: mingw64
         release: false
         update: true
         install: >-
