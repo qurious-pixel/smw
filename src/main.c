@@ -7,6 +7,7 @@
 #ifdef _WIN32
 #include "platform/win32/volume_control.h"
 #include <direct.h>
+#include <windows.h>
 #else
 #include <sys/stat.h>
 #include <sys/types.h>
