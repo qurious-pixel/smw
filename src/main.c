@@ -333,12 +333,12 @@ void MkDir(const char *s) {
 #endif
 }
 
-#undef main
-#if defined(_WIN32) || defined(_WIN64)
-#include <windows.h>
-	int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow) 
+#if defined (_WIN32)
+int WINAPI WinMain(UNUSED(HINSTANCE hInstance), UNUSED(HINSTANCE hPrevInstance), UNUSED(PSTR szCmdLine), UNUSED(int iCmdShow)) {
+  int argc = 0;
+  uTCHAR **argv = CommandLineToArgvW(GetCommandLineW(), &argc);
 #else
-	int main(int argc, char** argv) {
+  int main(int argc, char **argv) {
 #endif
 #ifdef __SWITCH__
   SwitchImpl_Init();
