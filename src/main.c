@@ -333,6 +333,7 @@ void MkDir(const char *s) {
 #endif
 }
 
+#define UNUSED(var) var __attribute__((unused))
 #if defined (_WIN32)
 int WINAPI WinMain(UNUSED(HINSTANCE hInstance), UNUSED(HINSTANCE hPrevInstance), UNUSED(PSTR szCmdLine), UNUSED(int iCmdShow)) {
   int argc = 0;
